@@ -1,11 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import { useFonts } from "expo-font";
+import Main from "./src/components/Main";
+import colors from "./src/shared/colors";
+import AppText from "./src/components/AppText";
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    "Space Mono": require("./assets/fonts/SpaceMono-Regular.ttf"),
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <View style={styles.title}>
+        <AppText style={styles.words}>SPLI</AppText>
+        <AppText style={styles.words}>TTER</AppText>
+      </View>
+      <Main />
     </View>
   );
 }
@@ -13,8 +28,18 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: colors.grayCyLight,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  title: {
+    height: "15%",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingTop: 25,
+  },
+  words: {
+    fontSize: 24,
+    color: colors.darkCyan,
   },
 });
