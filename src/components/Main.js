@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View } from "react-native";
 import colors from "../shared/colors";
+import InputSection from "./InputSection";
 
 export default function Main() {
   return (
     <View style={styles.container}>
-      <Text>HI</Text>
+      <InputSection label="Bill" icon="dollar" />
     </View>
   );
 }
@@ -12,12 +13,12 @@ export default function Main() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.lightBg,
+    backgroundColor: "white",
     alignItems: "center",
-    justifyContent: "center",
-    color: colors.grayCy,
+    // justifyContent: "center",
     width: "100%",
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
+    padding: 30,
   },
 });
