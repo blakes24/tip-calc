@@ -24,6 +24,7 @@ export default function InputSection({ label, icon }) {
 const styles = StyleSheet.create({
   container: {
     width: "100%",
+    // marginBottom: 25,
   },
   label: {
     color: colors.grayCyDark,
