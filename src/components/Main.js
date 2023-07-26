@@ -15,7 +15,11 @@ export default function Main() {
   const tipPer = +people > 0 ? tip / +people : 0;
   const totalPer = +people > 0 ? total / +people : 0;
 
-  console.log({ tip, total, tipPer, totalPer });
+  const reset = () => {
+    setBill("");
+    setPeople("");
+    setTipPercent("");
+  };
 
   return (
     <View style={styles.container}>
@@ -32,7 +36,11 @@ export default function Main() {
         value={people}
         setValue={setPeople}
       />
-      <Results tipPer={tipPer.toFixed(2)} totalPer={totalPer.toFixed(2)} />
+      <Results
+        tipPer={tipPer.toFixed(2)}
+        totalPer={totalPer.toFixed(2)}
+        reset={reset}
+      />
     </View>
   );
 }
