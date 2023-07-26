@@ -2,7 +2,7 @@ import { StyleSheet, View, TouchableOpacity } from "react-native";
 import AppText from "./AppText";
 import colors from "../shared/colors";
 
-export default function Results() {
+export default function Results({ tipPer, totalPer }) {
   return (
     <View style={styles.container}>
       <View style={styles.amountContainer}>
@@ -10,14 +10,14 @@ export default function Results() {
           <AppText style={styles.text}>Tip Amount</AppText>
           <AppText style={styles.smallText}>/ person</AppText>
         </View>
-        <AppText style={styles.amount}>$0.00</AppText>
+        <AppText style={styles.amount}>{tipPer}</AppText>
       </View>
       <View style={styles.amountContainer}>
         <View>
           <AppText style={styles.text}>Total</AppText>
           <AppText style={styles.smallText}>/ person</AppText>
         </View>
-        <AppText style={styles.amount}>$0.00</AppText>
+        <AppText style={styles.amount}>{totalPer}</AppText>
       </View>
       <TouchableOpacity style={styles.btn}>
         <AppText style={styles.btnText}>RESET</AppText>

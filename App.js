@@ -4,7 +4,6 @@ import { useFonts } from "expo-font";
 import Main from "./src/components/Main";
 import colors from "./src/shared/colors";
 import AppText from "./src/components/AppText";
-import DismissKeyboard from "./src/components/DismissKeyboard";
 
 export default function App() {
   const [fontsLoaded] = useFonts({

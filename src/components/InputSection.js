@@ -3,18 +3,18 @@ import colors from "../shared/colors";
 import AppText from "./AppText";
 import { FontAwesome } from "@expo/vector-icons";
 
-export default function InputSection({ label, icon }) {
+export default function InputSection({ label, icon, value, setValue }) {
   return (
     <View style={styles.container}>
       <AppText style={styles.label}>{label}</AppText>
       <View style={styles.inputContainer}>
         <FontAwesome name={icon} color={colors.grayCyDark} size={18} />
         <TextInput
-          style={[styles.input]}
+          value={value}
+          style={styles.input}
           placeholder="0"
           keyboardType="numeric"
-          // onChangeText={(text) => setInput(text)}
-          // onEndEditing={handleEndEditing}
+          onChangeText={(value) => setValue(value)}
         />
       </View>
     </View>
@@ -24,7 +24,6 @@ export default function InputSection({ label, icon }) {
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    // marginBottom: 25,
   },
   label: {
     color: colors.grayCyDark,

@@ -3,26 +3,51 @@ import AppText from "./AppText";
 import colors from "../shared/colors";
 import TipButton from "./TipButton";
 
-export default function TipSection() {
+export default function TipSection({ tipPercent, setTipPercent }) {
   return (
     <View style={styles.container}>
       <AppText style={styles.label}>Select Tip %</AppText>
       <View style={styles.btnRow}>
-        <TipButton style={styles.btn} percent={5} />
-        <TipButton style={styles.btn} percent={10} />
+        <TipButton
+          style={styles.btn}
+          percent={5}
+          setTipPercent={setTipPercent}
+          active={tipPercent === 5}
+        />
+        <TipButton
+          style={styles.btn}
+          percent={10}
+          setTipPercent={setTipPercent}
+          active={tipPercent === 10}
+        />
       </View>
       <View style={styles.btnRow}>
-        <TipButton style={styles.btn} percent={15} />
-        <TipButton style={styles.btn} percent={25} />
+        <TipButton
+          style={styles.btn}
+          percent={15}
+          setTipPercent={setTipPercent}
+          active={tipPercent === 15}
+        />
+        <TipButton
+          style={styles.btn}
+          percent={25}
+          setTipPercent={setTipPercent}
+          active={tipPercent === 25}
+        />
       </View>
       <View style={styles.btnRow}>
-        <TipButton style={styles.btn} percent={50} />
+        <TipButton
+          style={styles.btn}
+          percent={50}
+          setTipPercent={setTipPercent}
+          active={tipPercent === 50}
+        />
         <TextInput
-          style={[styles.input]}
+          value={tipPercent}
+          style={styles.input}
           placeholder="Custom"
           keyboardType="numeric"
-          // onChangeText={(text) => setInput(text)}
-          // onEndEditing={handleEndEditing}
+          onChangeText={(val) => setTipPercent(val)}
         />
       </View>
     </View>
