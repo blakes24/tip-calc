@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import { useFonts } from "expo-font";
 import Main from "./src/components/Main";
 import colors from "./src/shared/colors";
@@ -16,19 +16,22 @@ export default function App() {
   }
 
   return (
-    <DismissKeyboard>
-      <View style={styles.container}>
-        <View style={styles.title}>
-          <AppText style={styles.words}>SPLI</AppText>
-          <AppText style={styles.words}>TTER</AppText>
+    <SafeAreaView>
+      <ScrollView>
+        <View style={styles.container}>
+          <View style={styles.title}>
+            <AppText style={styles.words}>SPLI</AppText>
+            <AppText style={styles.words}>TTER</AppText>
+          </View>
+          <Main />
         </View>
-        <Main />
-      </View>
-    </DismissKeyboard>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safe: { flex: 1 },
   container: {
     flex: 1,
     backgroundColor: colors.grayCyLight,

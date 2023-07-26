@@ -32,7 +32,7 @@ export default function TipSection() {
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    marginTop: 25,
+    marginVertical: 25,
   },
   label: {
     color: colors.grayCyDark,
